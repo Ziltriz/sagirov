@@ -47,54 +47,62 @@ export default ({ menu = defaultMenu }: { menu?: MenuItem[] }) => {
     
 
     useEffect(() => {
-        const loadMenu = async () => {
-            let response
-            let data 
-            try {
+      const loadMenu = async () => {
+          let response;
+          let data;
+          
+          try {
               response = await httpRequest(SchemaMenu, {});
               
               // Проверяем что response существует
               if (!response) {
                   throw new Error('No response received');
               }
-               
-              data = response.data;
-              // Дальнейшая обработка данных
               
-            } catch (error) {
-                notifications.show({
-                    title: 'Ошибка',
-                    message: `Ошибка загрузки меню: ${error}`,
-                    color: 'red'
-                });
-            }
-            
-            const mapped = data.map((it: any) => {
-                // safe defaults
-                const id = it.id ?? Math.random().toString(36).slice(2, 9);
-                const title = it.title ?? '';
-                const url = it.url ?? '/';
-                return {
-                  key: String(id),
-                  label: String(title),
-                  href: String(url),
-                } as MenuItem;
+              data = response.data;
+              
+              // Проверяем что data существует и является массивом
+              if (!data || !Array.isArray(data)) {
+                  throw new Error('Invalid data format received');
+              }
+              
+              const mapped = data.map((it: any) => {
+                  // safe defaults
+                  const id = it.id ?? Math.random().toString(36).slice(2, 9);
+                  const title = it.title ?? '';
+                  const url = it.url ?? '/';
+                  return {
+                      key: String(id),
+                      label: String(title),
+                      href: String(url),
+                  } as MenuItem;
               });
-          
+              
               // Optionally sort by order if provided
               mapped.sort((a: any, b: any) => {
-                const ai = data.find((d: any) => String(d.id) === a.key);
-                const bi = data.find((d: any) => String(d.id) === b.key);
-                const ao = ai?.order ?? 0;
-                const bo = bi?.order ?? 0;
-                return ao - bo;
+                  const ai = data.find((d: any) => String(d.id) === a.key);
+                  const bi = data.find((d: any) => String(d.id) === b.key);
+                  const ao = ai?.order ?? 0;
+                  const bo = bi?.order ?? 0;
+                  return ao - bo;
               });
-          
+              
               setItems(mapped.length ? mapped : defaultMenu);
-
-        }
-        loadMenu();
-    }, [])
+              
+          } catch (error) {
+              console.error('Error loading menu:', error);
+              notifications.show({
+                  title: 'Ошибка',
+                  message: `Ошибка загрузки меню: ${error}`,
+                  color: 'red'
+              });
+              // Устанавливаем меню по умолчанию при ошибке
+              setItems(defaultMenu);
+          }
+      }
+      
+      loadMenu();
+  }, [])
 
     const handleNavClick = (e: React.MouseEvent, href: string) => {
         e.preventDefault();
