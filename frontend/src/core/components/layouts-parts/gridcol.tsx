@@ -28,7 +28,7 @@ return (
   component="span"
   style={{
     display: 'block',
-    fontSize: '4.1rem',
+    fontSize: '4.2rem',
     fontWeight: 300,
     textTransform: 'uppercase',
     color: '#ffffff', 
