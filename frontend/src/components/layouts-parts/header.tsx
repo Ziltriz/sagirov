@@ -49,19 +49,27 @@ export default ({ menu = defaultMenu }: { menu?: MenuItem[] }) => {
     useEffect(() => {
         const loadMenu = async () => {
             let response
-      
+            let data 
             try {
-              response = await httpRequest(
-                SchemaMenu,  {}
-              )
-            } catch (error){
+              response = await httpRequest(SchemaMenu, {});
+              
+              // Проверяем что response существует
+              if (!response) {
+                  throw new Error('No response received');
+              }
+               
+              data = response.data;
+              // Дальнейшая обработка данных
+              
+            } catch (error) {
                 notifications.show({
                     title: 'Ошибка',
                     message: `Ошибка загрузки меню: ${error}`,
                     color: 'red'
-                  });
+                });
             }
-            const data = await response.data;const mapped = data.map((it: any) => {
+            
+            const mapped = data.map((it: any) => {
                 // safe defaults
                 const id = it.id ?? Math.random().toString(36).slice(2, 9);
                 const title = it.title ?? '';
