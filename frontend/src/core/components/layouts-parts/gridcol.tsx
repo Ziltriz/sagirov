@@ -28,7 +28,7 @@ return (
   component="span"
   style={{
     display: 'block',
-    fontSize: '4rem',
+    fontSize: '4.1rem',
     fontWeight: 300,
     textTransform: 'uppercase',
     color: '#ffffff', 
@@ -44,7 +44,7 @@ return (
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       fontWeight: 200,
-      clipPath: 'polygon(0 0, 97% 0, 89% 100%, 0 100%)',
+      clipPath: 'polygon(0 0, 9% 0, 89% 100%, 0 100%)',
       letterSpacing:'0.1rem'
     }}
   >
