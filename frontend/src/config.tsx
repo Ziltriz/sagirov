@@ -11,7 +11,7 @@ export default {
     intervalAuth: (process.env.hasOwnProperty('NEXT_PUBLIC_INTERVAL_AUTH') == true ? process.env.NEXT_PUBLIC_INTERVAL_AUTH : 60 * 1),
     localStorageCache: (process.env.hasOwnProperty('NEXT_PUBLIC_LOCAL_STORAGE_CACHE') == true ? process.env.NEXT_PUBLIC_LOCAL_STORAGE_CACHE : 60 * 60 * 24),
     // hostUrl: (process.env.hasOwnProperty('NEXT_PUBLIC_API_URL') == true ? process.env.NEXT_PUBLIC_HOST_URL : 'http://localhost:8001'),
-    apiUrl: (process.env.hasOwnProperty('NEXT_PUBLIC_API_URL') == true ? process.env.NEXT_PUBLIC_API_URL : 'http://http://83.166.246.211:8003/api/'),
+    apiUrl: (process.env.hasOwnProperty('NEXT_PUBLIC_API_URL') == true ? process.env.NEXT_PUBLIC_API_URL : 'http://83.166.246.211:8003/api/'),
     // apiUrl: (process.env.hasOwnProperty('NEXT_PUBLIC_API_URL') == true ? process.env.NEXT_PUBLIC_API_URL : 'http://5.129.200.135:8001/api/'),
     // imageUrl: (process.env.hasOwnProperty('NEXT_PUBLIC_API_URL') == true ? process.env.NEXT_PUBLIC_IMAGE_URL : 'http://localhost:8001/image'),
     rootPath: (process.env.hasOwnProperty('NEXT_PUBLIC_ROOT_PATH') == true ? process.env.NEXT_PUBLIC_ROOT_PATH : ''),
