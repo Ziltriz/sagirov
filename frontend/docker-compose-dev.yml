@@ -46,7 +46,7 @@ services:
         #command: >
         #    tail -f /dev/null
         command: >
-            pnpm dev
+            npm run dev
         working_dir: '/app'
         ports:
             - ${PORT}:${PORT}
