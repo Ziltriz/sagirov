@@ -21,13 +21,11 @@ DOCKER_COMPOSE_FILE = docker-compose-${ENV_NAME}.yml
 help: ## Show this help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-init: install build network ## init service
+init: install network ## init service
 
 install: network ## install service
-	docker compose -f "$(DOCKER_COMPOSE_FILE)" run --rm "$(CONTAINER_NAME)" npm install -g pnpm@latest
+	docker compose -f "$(DOCKER_COMPOSE_FILE)" run --rm "$(CONTAINER_NAME)" sh -c "npm install -g pnpm@latest && pnpm install && pnpm build"
 
-build: ## build service
-	docker compose -f "$(DOCKER_COMPOSE_FILE)" run --rm "$(CONTAINER_NAME)" pnpm build
 
 network: ## create network service
 	docker network create $(PROJECT_NAME)-${ENV_NAME} || true
