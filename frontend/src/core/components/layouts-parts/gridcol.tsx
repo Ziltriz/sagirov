@@ -44,7 +44,7 @@ return (
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       fontWeight: 200,
-      clipPath: 'polygon(0 0, 9% 0, 89% 100%, 0 100%)',
+      clipPath: 'polygon(0 0, 97% 0, 89% 100%, 0 100%)',
       letterSpacing:'0.1rem'
     }}
   >
