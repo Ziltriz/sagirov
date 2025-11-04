@@ -1,0 +1,33 @@
+networks:
+  all:
+    external: true
+    name: '${PROJECT_NAME}'
+  project:
+    external: true
+    name: '${PROJECT_NAME}-${ENV_NAME}'
+  project-service:
+    external: true
+    name: '${PROJECT_NAME}-si-service'
+
+services:
+  postges:
+    image: postgres:15  
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    restart: unless-stopped
+    ports:
+      - '${POSTGRES_PORT}:5432' 
+    volumes:
+      - postgres_data:/var/lib/postgresql/data 
+      - ./logs/postgres:/var/log/postgresql     
+    networks:
+      - all
+      - project
+      - project-service
+
+volumes:
+  postgres_data:

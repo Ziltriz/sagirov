@@ -1,0 +1,76 @@
+@use 'sass:math';
+@use '@/core/styles/funcs' as *;
+
+$c-white: #ffffff !default;
+$c-black: #f5f5f5 !default;
+$c-mainBlue: #3a8ee8 !default;
+$c-mainRed: #00874f !default;
+$c-hoverRed: #09b86f !default;
+$c-activeRed: #00874f !default;
+$c-paginationsRed: #00874f !default;
+$c-errorRed: #ff0004 !default;
+$c-statusRed: #ff0004 !default;
+$c-dark: #212529 !default;
+$c-dark-hover: #3a8ee8 !default;
+$c-gray-light: #f5f5f5 !default;
+$c-gray: #434343 !default;
+$c-grayLines: #e8e8e8 !default;
+$c-grayBtn: #f5f5f5 !default;
+$c-disabled: #f5f5f5 !default;
+$c-grayBg: #f5f5f5 !default;
+$c-green: #00874f !default;
+$c-orange: #00874f !default;
+$c-focus: rgba(31, 31, 124, 0.65) !default;
+$c-shadow: rgba(79, 105, 118, 0.08) !default;
+$c-pink:#fae1e7 !default;
+
+$radius-primary: rem(1) !default;
+$b-shadow: 0px 4px 24px rgba(79, 105, 118, 0.06) !default;
+$spaceXS: rem(16) !default;
+$spaceS: rem(24) !default;
+$spaceM: rem(32) !default;
+$space-80: fluid(15, 80) !default;
+$space-40: fluid(20, 40) !default;
+$space-32: fluid(16, 32) !default;
+$v-space-24: fluid(16, 24, 'vh') !default;
+$v-space-28: fluid(18, 28, 'vh') !default;
+$mainBorder: 1px solid $c-grayLines !default;
+
+$sidebarWidth: 17vw;
+$animation-duration-100: 100ms !default;
+$exit-animation-ease: cubic-bezier(0.5, 0, 1, 1) !default;
+$entry-animation-ease: cubic-bezier(0, 0, 0.4, 1) !default;
+$dialog-animation-distance: 20px !default;
+$dialog-animation-duration: 200ms !default;
+$dialog-background-animation-duration: 200ms !default;
+
+$xs: em(480) !default;
+$sm: em(768) !default;
+$md: em(1024) !default;
+$lg: em(1184) !default;
+$xl: em(1440) !default;
+
+$fs-10: rem(10) !default;
+$fs-12: rem(12) !default;
+$fs-14: rem(14) !default;
+$fs-16: rem(16) !default;
+$fs-18: rem(18) !default;
+$fs-21: rem(21) !default;
+$fs-23: rem(23) !default;
+$fs-24: rem(24) !default;
+$fs-26: rem(26) !default;
+$fs-28: rem(28) !default;
+$fs-34: rem(34) !default;
+
+$modalPoint: '500px' !default;
+$dialog-max-width: 90vw !default;
+$dialog-max-height: 90% !default;
+$dialog-border-radius: rem(0) !default;
+$dialog-width-S: rem(432) !default;
+$dialog-width-XS: rem(290) !default;
+$dialog-padding-x: rem(28) !default;
+$dialog-padding-x-mobile: rem(16) !default;
+$dialog-padding-y: rem(40) !default;
+$dialog-padding-y-S: rem(24) !default;
+$dialog-padding-y-mobile: rem(16) !default;
+$dialog-bg-color: $c-white !default;

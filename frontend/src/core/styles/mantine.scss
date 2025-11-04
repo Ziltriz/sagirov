@@ -1,0 +1,657 @@
+@use '@/core/styles/vars' as *;
+@use '@/core/styles/funcs' as *;
+
+.mantine-Modal-title {
+    font-size: $fs-21;
+    color: $c-dark;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    margin-top: $spaceXS;
+}
+
+.mantine-Modal-header {
+    padding: $spaceXS;
+}
+
+.mantine-Modal-header .mantine-UnstyledButton-root{
+    position: absolute;
+    top: rem(28);
+    right: rem(15);
+}
+
+.mantine-Modal-body {
+    padding: $spaceXS;
+}
+
+.mantine-Container-root {
+    padding: 0;
+}
+
+.mantine-TextInput-root,
+.mantine-PasswordInput-root,
+.mantine-Textarea-root,
+.mantine-SwitchGroup-root,
+.mantine-Group-root,
+.mantine-DropzoneGroup-root,
+.mantine-period-root,
+.mantine-DateTimePicker-root:not([data-variant$="period"]),
+.mantine-DateInput-root:not([data-variant$="period"]),
+.mantine-switch-root,
+.mantine-Select-root,
+.mantine-MultiSelect-root {
+    width: 100%;
+    margin-bottom: $spaceXS;
+}
+
+.mantine-TextInput-root[data-variant^="pages"],
+.mantine-TextInput-root[data-variant^="setting-item"],
+.mantine-NumberInput-root[data-variant^="pages"],
+.mantine-NumberInput-root[data-variant^="setting-item"],
+.mantine-PasswordInput-root[data-variant^="pages"],
+.mantine-PasswordInput-root[data-variant^="setting-item"],
+.mantine-Textarea-root[data-variant^="pages"],
+.mantine-Textarea-root[data-variant^="setting-item"],
+.mantine-SwitchGroup-root[data-variant^="pages"],
+.mantine-SwitchGroup-root[data-variant^="setting-item"],
+.mantine-Group-root[data-variant^="pages"],
+.mantine-Group-root[data-variant^="setting-item"],
+.mantine-DropzoneGroup-root[data-variant^="pages"],
+.mantine-DropzoneGroup-root[data-variant^="setting-item"],
+.mantine-period-root[data-variant^="pages"],
+.mantine-period-root[data-variant^="setting-item"],
+.mantine-DateInput-root[data-variant^="pages"]:not([data-variant$="period"]),
+.mantine-DateInput-root[data-variant^="setting-item"]:not([data-variant$="period"]),
+.mantine-DateTimePicker-root[data-variant^="pages"]:not([data-variant$="period"]),
+.mantine-DateTimePicker-root[data-variant^="setting-item"]:not([data-variant$="period"]),
+.mantine-switch-root[data-variant^="pages"],
+.mantine-switch-root[data-variant^="setting-item"],
+.mantine-Select-root[data-variant^="pages"],
+.mantine-Select-root[data-variant^="setting-item"],
+.mantine-MultiSelect-root[data-variant^="pages"],
+.mantine-MultiSelect-root[data-variant^="setting-item"],
+.mantine-Autocomplete-root[data-variant^="pages"],
+.mantine-Autocomplete-root[data-variant^="setting-item"] {
+    background-color: $c-white;
+    padding: $spaceM;
+    margin-bottom: $spaceM;
+    flex: 1 1 20%;
+    align-items: baseline;
+}
+
+.mantine-TextInput-root[data-variant^="pages-inline"],
+.mantine-NumberInput-root[data-variant^="pages-inline"],
+.mantine-PasswordInput-root[data-variant^="pages-inline"],
+.mantine-Textarea-root[data-variant^="pages-inline"],
+.mantine-SwitchGroup-root[data-variant^="pages-inline"],
+.mantine-Group-root[data-variant^="pages-inline"],
+.mantine-DropzoneGroup-root[data-variant^="pages-inline"],
+.mantine-period-root[data-variant^="pages-inline"],
+.mantine-DateInput-root[data-variant^="pages-inline"]:not([data-variant$="period"]),
+.mantine-DateTimePicker-root[data-variant^="pages-inline"]:not([data-variant$="period"]),
+.mantine-switch-root[data-variant^="pages-inline"],
+.mantine-Select-root[data-variant^="pages-inline"],
+.mantine-MultiSelect-root[data-variant^="pages-inline"],
+.mantine-Autocomplete-root[data-variant^="pages-inline"] {
+    padding: $spaceM/4;
+    margin-bottom: $spaceM/4;
+    flex: 1 1 100%;
+    display:flex;
+    align-items: center;
+}
+
+.mantine-TextInput-wrapper[data-variant^="pages-inline"],
+.mantine-NumberInput-wrapper[data-variant^="pages-inline"],
+.mantine-PasswordInput-wrapper[data-variant^="pages-inline"],
+.mantine-Textarea-wrapper[data-variant^="pages-inline"],
+.mantine-SwitchGroup-wrapper[data-variant^="pages-inline"],
+.mantine-Group-wrapper[data-variant^="pages-inline"],
+.mantine-DropzoneGroup-wrapper[data-variant^="pages-inline"],
+.mantine-period-wrapper[data-variant^="pages-inline"],
+.mantine-DateInput-wrapper[data-variant^="pages-inline"]:not([data-variant$="period"]),
+.mantine-DateTimePicker-wrapper[data-variant^="pages-inline"]:not([data-variant$="period"]),
+.mantine-switch-wrapper[data-variant^="pages-inline"],
+.mantine-Select-wrapper[data-variant^="pages-inline"],
+.mantine-MultiSelect-wrapper[data-variant^="pages-inline"],
+.mantine-Autocomplete-wrapper[data-variant^="pages-inline"] {
+    width:100%;
+}
+
+.mantine-TextInput-root[data-variant^="setting-item"],
+.mantine-NumberInput-root[data-variant^="setting-item"],
+.mantine-PasswordInput-root[data-variant^="setting-item"],
+.mantine-Textarea-root[data-variant^="setting-item"],
+.mantine-SwitchGroup-root[data-variant^="setting-item"],
+.mantine-Group-root[data-variant^="setting-item"],
+.mantine-DropzoneGroup-root[data-variant^="setting-item"],
+.mantine-period-root[data-variant^="setting-item"],
+.mantine-DateInput-root[data-variant^="setting-item"]:not([data-variant$="period"]),
+.mantine-DateTimePicker-root[data-variant^="setting-item"]:not([data-variant$="period"]),
+.mantine-switch-root[data-variant^="setting-item"],
+.mantine-Select-root[data-variant^="setting-item"],
+.mantine-MultiSelect-root[data-variant^="setting-item"],
+.mantine-Autocomplete-root[data-variant^="setting-item"] {
+    padding: 0;
+}
+
+.mantine-Switch-root[data-variant^="pages-inline"] {
+    justify-content: center;
+    display: flex;
+}
+
+.mantine-TextInput-description[data-variant^="pages"],
+.mantine-TextInput-description[data-variant^="setting-item"],
+.mantine-NumberInput-description[data-variant^="pages"],
+.mantine-NumberInput-description[data-variant^="setting-item"],
+.mantine-PasswordInput-description[data-variant^="pages"],
+.mantine-PasswordInput-description[data-variant^="setting-item"],
+.mantine-Textarea-description[data-variant^="pages"],
+.mantine-Textarea-description[data-variant^="setting-item"],
+.mantine-SwitchGroup-description[data-variant^="pages"],
+.mantine-SwitchGroup-description[data-variant^="setting-item"],
+.mantine-Group-description[data-variant^="pages"],
+.mantine-Group-description[data-variant^="setting-item"],
+.mantine-DropzoneGroup-description[data-variant^="pages"],
+.mantine-DropzoneGroup-description[data-variant^="setting-item"],
+.mantine-period-description[data-variant^="pages"],
+.mantine-period-description[data-variant^="setting-item"],
+.mantine-DateInput-description[data-variant^="pages"]:not([data-variant$="period"]),
+.mantine-DateInput-description[data-variant^="setting-item"]:not([data-variant$="period"]),
+.mantine-DateTimePicker-description[data-variant^="pages"]:not([data-variant$="period"]),
+.mantine-DateTimePicker-description[data-variant^="setting-item"]:not([data-variant$="period"]),
+.mantine-switch-description[data-variant^="pages"],
+.mantine-switch-description[data-variant^="setting-item"],
+.mantine-Select-description[data-variant^="pages"],
+.mantine-Select-description[data-variant^="setting-item"],
+.mantine-MultiSelect-description[data-variant^="pages"],
+.mantine-MultiSelect-description[data-variant^="setting-item"],
+.mantine-Autocomplete-description[data-variant^="pages"],
+.mantine-Autocomplete-description[data-variant^="setting-item"] {
+    position: relative;
+    top: -(rem(10));
+    color: $c-gray;
+    font-size: $fs-12;
+}
+
+.mantine-TimeInput-input,
+.mantine-NumberInput-input,
+.mantine-TextInput-input,
+.mantine-PasswordInput-innerInput,
+.mantine-Textarea-input,
+.mantine-DateInput-input,
+.mantine-DateTimePicker-input,
+.mantine-Select-input,
+.mantine-MultiSelect-input,
+.mantine-Autocomplete-input {
+    /*background-color: $c-grayBg;*/
+    border: none;
+    outline: none;
+    color: $c-gray;
+    padding: rem(14) rem(16);
+    border-radius: $radius-primary;
+    font-size: $fs-16;
+    line-height: 1.5;
+    min-height: rem(14 * 3.7);
+    border: rem(1) solid $c-grayBg;
+    text-align: center;
+}
+.mantine-PasswordInput-input {
+    border: none;
+    outline: none;
+    color: $c-gray;
+    padding: rem(14) rem(16);
+    border-radius: $radius-primary;
+    line-height: 1.5;
+    height: rem(14 * 3.7);
+}
+
+
+.mantine-TimeInput-input[data-variant^="pages-inline"],
+.mantine-NumberInput-input[data-variant^="pages-inline"],
+.mantine-TextInput-input[data-variant^="pages-inline"],
+.mantine-Textarea-input[data-variant^="pages-inline"],
+.mantine-DateInput-input[data-variant^="pages-inline"],
+.mantine-DateTimePicker-input[data-variant^="pages-inline"],
+.mantine-Select-input[data-variant^="pages-inline"],
+.mantine-MultiSelect-input[data-variant^="pages-inline"],
+.mantine-Autocomplete-input[data-variant^="pages-inline"],
+.mantine-PasswordInput-innerInput[data-variant^="pages-inline"] {
+    height: rem(14 * 3);
+}
+
+.mantine-MultiSelect-input{
+    height:auto;
+}
+
+
+/*.mantine-TimeInput-input[data-variant^="pages-inline"],
+.mantine-NumberInput-input[data-variant^="pages-inline"],
+.mantine-TextInput-input[data-variant^="pages-inline"],
+.mantine-PasswordInput-innerInput[data-variant^="pages-inline"],
+.mantine-Textarea-input[data-variant^="pages-inline"],
+.mantine-DateInput-input[data-variant^="pages-inline"],
+.mantine-DateTimePicker-input[data-variant^="pages-inline"],
+.mantine-Select-input[data-variant^="pages-inline"],
+.mantine-MultiSelect-input[data-variant^="pages-inline"],
+.mantine-Autocomplete-input[data-variant^="pages-inline"] {
+
+}*/
+
+.mantine-PasswordInput-input[data-variant^="pages"] .mantine-PasswordInput-innerInput,
+.mantine-PasswordInput-input[data-variant^="setting-item"] .mantine-PasswordInput-innerInput {
+    border: none;
+}
+
+.mantine-Select-input {
+    color: $c-dark;
+}
+
+.mantine-TextInput-input::placeholder,
+.mantine-NumberInput-input::placeholder,
+.mantine-PasswordInput-innerInput::placeholder,
+.mantine-Textarea-input::placeholder,
+.mantine-DateInput-input::placeholder,
+.mantine-DateTimePicker-input::placeholder,
+.mantine-Select-input::placeholder,
+.mantine-TimeInput-input::placeholder,
+.mantine-Autocomplete-input::placeholder {
+    color: $c-gray;
+}
+
+
+.mantine-TextInput-input[data-variant^="pages"],
+.mantine-TextInput-input[data-variant^="setting-item"],
+.mantine-NumberInput-input[data-variant^="pages"],
+.mantine-NumberInput-input[data-variant^="setting-item"],
+.mantine-PasswordInput-input[data-variant^="pages"],
+.mantine-PasswordInput-input[data-variant^="setting-item"],
+.mantine-PasswordInput-innerInput[data-variant^="pages"],
+.mantine-PasswordInput-innerInput[data-variant^="setting-item"],
+.mantine-Textarea-input[data-variant^="pages"],
+.mantine-Textarea-input[data-variant^="setting-item"],
+.mantine-DateInput-input[data-variant^="pages"],
+.mantine-DateInput-input[data-variant^="setting-item"],
+.mantine-DateTimePicker-input[data-variant^="pages"],
+.mantine-DateTimePicker-input[data-variant^="setting-item"],
+.mantine-Select-input[data-variant^="pages"],
+.mantine-Select-input[data-variant^="setting-item"],
+.mantine-MultiSelect-input[data-variant^="pages"],
+.mantine-MultiSelect-input[data-variant^="setting-item"],
+.mantine-Autocomplete-input[data-variant^="pages"],
+.mantine-Autocomplete-input[data-variant^="setting-item"] {
+    background-color: #fff;
+    border: rem(1) solid $c-grayLines;
+}
+
+.mantine-TextInput-input[data-variant^="pages"]:disabled,
+.mantine-TextInput-input[data-variant^="setting-item"]:disabled,
+.mantine-NumberInput-input[data-variant^="pages"]:disabled,
+.mantine-NumberInput-input[data-variant^="setting-item"]:disabled,
+.mantine-PasswordInput-innerInput[data-variant^="pages"]:disabled,
+.mantine-PasswordInput-innerInput[data-variant^="setting-item"]:disabled,
+.mantine-Textarea-input[data-variant^="pages"]:disabled,
+.mantine-Textarea-input[data-variant^="setting-item"]:disabled,
+.mantine-DateInput-input[data-variant^="pages"]:disabled,
+.mantine-DateInput-input[data-variant^="setting-item"]:disabled,
+.mantine-DateTimePicker-input[data-variant^="pages"]:disabled,
+.mantine-DateTimePicker-input[data-variant^="setting-item"]:disabled,
+.mantine-Select-input[data-variant^="pages"]:disabled,
+.mantine-Select-input[data-variant^="setting-item"]:disabled,
+.mantine-MultiSelect-input[data-variant^="pages"]:disabled,
+.mantine-MultiSelect-input[data-variant^="setting-item"]:disabled,
+.mantine-Autocomplete-input[data-variant^="pages"]:disabled,
+.mantine-Autocomplete-input[data-variant^="setting-item"]:disabled {
+    background-color: $c-grayBg;
+    border: rem(1) solid $c-grayBg;
+    color: $c-gray;
+}
+
+.mantine-TextInput-input:focus,
+.mantine-NumberInput-input:focus,
+.mantine-PasswordInput-input:focus,
+.mantine-PasswordInput-innerInput:focus,
+.mantine-Textarea-innerInput:focus,
+.mantine-DateInput-input:focus,
+.mantine-DateTimePicker-input:focus,
+.mantine-Select-input:focus,
+.mantine-MultiSelect-input:focus,
+.mantine-TimeInput-input:focus,
+.mantine-Autocomplete-input:focus,
+.mantine-PasswordInput-input[data-variant^="pages"] .mantine-PasswordInput-innerInput:focus {
+    border: rem(1) solid $c-gray;
+}
+
+.mantine-TextInput-input[data-error="true"],
+.mantine-NumberInput-input[data-error="true"],
+.mantine-PasswordInput-innerInput[data-invalid="true"],
+.mantine-Textarea-innerInput[data-invalid="true"],
+.mantine-DateInput-input[data-error="true"],
+.mantine-DateTimePicker-input[data-error="true"],
+.mantine-Select-input[data-error="true"],
+.mantine-MultiSelect-input[data-error="true"],
+.mantine-TimeInput-input[data-error="true"],
+.mantine-Autocomplete-input[data-error="true"] {
+    border: 1px solid $c-statusRed;
+}
+
+.mantine-UnstyledButton-root {
+    background: none;
+    cursor: pointer;
+    position: relative;
+    top: rem(1);
+}
+
+.mantine-Button-root {
+    font-size: $fs-14;
+    padding: rem(8);
+    line-height: 1;
+    min-height: rem(2 * 4);
+    cursor: pointer;
+    border-radius: $dialog-border-radius;
+}
+
+.mantine-Button-root:hover {
+    background: none;
+}
+
+
+.mantine-TextInput-error,
+.mantine-PasswordInput-error {
+    color: $c-statusRed;
+    word-break: break-word;
+    font-size: $fs-14;
+    margin-top: rem(5);
+}
+
+.mantine-Alert-root {
+    position: fixed;
+    bottom: rem(5);
+    right: rem(50);
+    background: $c-pink;
+    color: $c-statusRed;
+    font-size: $fs-16;
+    padding: rem(12);
+    z-index: 9999;
+}
+
+.mantine-Alert-icon {
+    position: relative;
+    top: rem(1);
+    right: rem(3);
+}
+
+.mantine-Alert-label {
+    font-weight: 500;
+}
+
+.mantine-NavLink-section[data-position="right"] {
+    width: rem(16);
+    height: rem(16);
+    position: relative;
+    top: rem(1.5);
+    left: rem(8);
+}
+
+.mantine-NavLink-children {
+    padding-inline-start: 0;
+}
+
+.mantine-NavLink-section[data-position="right"] .mantine-NavLink-chevron {
+    position: relative;
+    left: -2px;
+}
+
+.mantine-NavLink-label {
+    font-size: rem(16);
+}
+
+.mantine-TextInput-label[data-variant^="pages"],
+.mantine-TextInput-label[data-variant^="setting-item"],
+.mantine-NumberInput-label[data-variant^="pages"],
+.mantine-NumberInput-label[data-variant^="setting-item"],
+.mantine-PasswordInput-label[data-variant^="pages"],
+.mantine-PasswordInput-label[data-variant^="setting-item"],
+.mantine-Textarea-label[data-variant^="pages"],
+.mantine-Textarea-label[data-variant^="setting-item"],
+.mantine-SwitchGroup-label[data-variant^="pages"],
+.mantine-SwitchGroup-label[data-variant^="setting-item"],
+.mantine-DateInput-label[data-variant^="pages"],
+.mantine-DateInput-label[data-variant^="setting-item"],
+.mantine-DateTimePicker-label[data-variant^="pages"],
+.mantine-DateTimePicker-label[data-variant^="setting-item"],
+.mantine-DropzoneGroup-label[data-variant^="pages"],
+.mantine-DropzoneGroup-label[data-variant^="setting-item"],
+.mantine-period-label[data-variant^="setting-item"],
+.mantine-period-label[data-variant^="pages"],
+.mantine-switch-label[data-variant^="setting-item"],
+.mantine-switch-label[data-variant^="pages"],
+.mantine-switch-label[data-variant^="setting-item"],
+.mantine-Select-label[data-variant^="pages"],
+.mantine-Select-label[data-variant^="setting-item"],
+.mantine-MultiSelect-label[data-variant^="pages"],
+.mantine-MultiSelect-label[data-variant^="setting-item"],
+.mantine-Autocomplete-label[data-variant^="pages"],
+.mantine-Autocomplete-label[data-variant^="setting-item"] {
+    color: $c-dark;
+    margin-bottom: $spaceXS;
+    font-size: $fs-16;
+    font-weight: 500;
+}
+
+.mantine-TextInput-label[data-variant^="pages-inline"],
+.mantine-NumberInput-label[data-variant^="pages-inline"],
+.mantine-PasswordInput-label[data-variant^="pages-inline"],
+.mantine-Textarea-label[data-variant^="pages-inline"],
+.mantine-SwitchGroup-label[data-variant^="pages-inline"],
+.mantine-DateInput-label[data-variant^="pages-inline"],
+.mantine-DateTimePicker-label[data-variant^="pages-inline"],
+.mantine-DropzoneGroup-label[data-variant^="pages-inline"],
+.mantine-period-label[data-variant^="pages-inline"],
+.mantine-switch-label[data-variant^="pages-inline"],
+.mantine-Select-label[data-variant^="pages-inline"],
+.mantine-MultiSelect-label[data-variant^="pages-inline"],
+.mantine-Autocomplete-label[data-variant^="pages-inline"] {
+    min-width: rem(150);
+    text-align:left;
+    position: relative;
+    top: rem(9);
+}
+
+.mantine-switch-label[data-variant^="setting-item"] {
+    margin-bottom: $spaceXS*2;
+}
+
+.mantine-Switch-track {
+    background-color: $c-grayBtn;
+    border-color: $c-grayBtn;
+    cursor: pointer;
+}
+
+.mantine-Switch-input:checked+.mantine-Switch-track {
+    background-color: $c-green;
+    border-color: $c-green;
+}
+
+.mantine-Switch-thumb {
+    background-color: $c-white;
+}
+
+.mantine-Switch-body {
+    display: flex;
+}
+
+.mantine-Switch-track[data-label-position="left"] {
+    order: 2;
+    /*margin-left: $spaceXS;*/
+}
+
+.mantine-Dropzone-root {
+    min-height: rem(150);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.mantine-Dropzone-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: $fs-14;
+    color: $c-gray;
+}
+
+.mantine-DropzoneGroup-anchor {
+    font-size: $fs-14;
+}
+
+.mantine-DropzoneGroup-icon {
+    stroke: $c-mainBlue;
+    transform: rotate(-44deg);
+}
+
+.mantine-DropzoneGroup-box[data-variant="left"] {
+    flex: 1 1 49%;
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    margin-right: $spaceXS;
+}
+
+.mantine-DropzoneGroup-box[data-variant="right"] {
+    padding-right: rem(105)
+}
+
+.mantine-Checkbox-label {
+    font-size: $fs-12;
+}
+
+.mantine-Checkbox-input {
+    cursor: pointer;
+    width: rem(20);
+    height: rem(20);
+    border-radius: $radius-primary/2;
+    border: 1px solid $c-grayLines;
+}
+
+.mantine-Checkbox-input:checked {
+    background-color: $c-mainRed;
+    border-color: $c-mainRed;
+}
+
+.mantine-NavLink-body {
+    flex: none;
+}
+
+.mantine-DropzoneGroup-description {
+    margin: $spaceXS 0;
+}
+
+.mantine-DropzoneGroup-description-title {
+    color: $c-dark;
+    font-size: $fs-14;
+}
+
+.mantine-DropzoneGroup-description-text {
+    font-size: $fs-12;
+    color: $c-gray;
+}
+
+.mantine-DropzoneGroup-image {
+    width: auto;
+    height: rem(110);
+}
+
+.mantine-Dropzone-root {
+    border-width: rem(3);
+}
+
+.mantine-DropzoneGroup-close {
+    position: absolute;
+    top: rem(5);
+    right: rem(5);
+    width: rem(19);
+    height: rem(19);
+    cursor: pointer;
+    fill: $c-gray;
+    z-index: 999;
+    pointer-events: all;
+}
+
+.mantine-DateInput-day[data-selected] {
+    background-color: $c-mainBlue;
+    color: $c-white;
+    font-size: $fs-12;
+    border-radius: 50%;
+}
+
+.montine-InputDate-icon {
+    fill: $c-mainBlue;
+}
+
+.mantine-Select-section,
+.mantine-MultiSelect-section {
+    width: 8%;
+}
+
+.mantine-MultiSelect-pill {
+    font-size: rem(10);
+}
+
+.mantine-Select-section [data-variant="fill"],
+.mantine-MultiSelect-section [data-variant="fill"] {
+    fill: $c-dark;
+}
+
+.mantine-Select-section [data-variant="stroke"],
+.mantine-MultiSelect-section [data-variant="stroke"] {
+    stroke: $c-dark;
+}
+
+.mantine-Select-dropdown,
+.mantine-MultiSelect-dropdown {
+    border: none;
+    outline: none;
+    box-shadow: $b-shadow;
+    border-radius: $radius-primary;
+    padding: $spaceXS/2 0;
+}
+
+.mantine-ScrollArea-viewport {
+    padding: 0;
+}
+
+.mantine-Select-option,
+.mantine-MultiSelect-option {
+    padding: $spaceXS;
+    border-radius: 0;
+}
+
+.mantine-Select-option svg,
+.mantine-MultiSelect-option svg {
+    fill: $c-dark;
+    opacity: 1;
+}
+
+.mantine-DateInput-root[data-variant^="pages"][data-variant$="period"] {
+    flex: 1 1 45%;
+}
+
+.mantine-Popover-dropdown {
+    box-shadow: $b-shadow;
+    padding: $spaceXS/2;
+    border-color: $c-grayBg;
+}
+
+.mantine-Popover-arrow{
+    border-color: $c-grayBg;
+    border-width: 2px;
+    top: -2.8px !important;
+    background: $c-grayBg;
+}
+
+
+.mantine-DateInput-section[data-position="right"],
+.mantine-DateTimePicker-section[data-position="right"]{
+    pointer-events: none;
+}

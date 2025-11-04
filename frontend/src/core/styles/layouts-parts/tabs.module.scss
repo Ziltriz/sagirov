@@ -1,0 +1,41 @@
+@use '@/core/styles/funcs' as *;
+@use '@/styles/vars' as *;
+
+.tabswrapper{
+    background:$c-white;
+    padding: $spaceXS rem(30) 0;
+    margin-top: -($spaceM);
+    margin-bottom: $spaceM;
+    position:relative;
+}
+.tabswrapper:before{
+    content:'';
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: rem(1);
+    background-color:$c-grayLines;
+}
+.tabsitem{
+    color: $c-gray;
+    font-size: $fs-14;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0,0,0,0);
+    padding-left:$spaceXS;
+    padding-right:$spaceXS;
+    padding-bottom:$spaceXS;
+    z-index:2;
+}
+
+
+.tabsitem {
+  cursor: pointer;
+  padding: 8px 14px;
+  color: rgba(255,255,255,0.8);
+  &[data-active="true"] {
+    color: #ff7a3d;
+    border-bottom: 2px solid #ff7a3d;
+  }
+  &:hover { opacity: 0.9; }
+}

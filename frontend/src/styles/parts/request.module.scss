@@ -1,0 +1,13 @@
+@use '@/core/styles/funcs' as *;
+@use '@/styles/vars' as *;
+
+.row{
+    display:flex;
+    font-size:14px;
+}
+.head{
+    font-weight:bold;
+}
+.value{
+    margin-left: rem(5);
+}

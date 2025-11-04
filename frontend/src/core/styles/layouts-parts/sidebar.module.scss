@@ -1,0 +1,97 @@
+@use '@/core/styles/funcs' as *;
+@use '@/styles/vars' as *;
+
+.block {
+    background-color: $c-dark;
+    width: $sidebarWidth;
+    padding: rem(35) rem(2);
+    position: fixed;
+    top: $headerHeight;
+    left: 0;
+    height: 100%;
+}
+.block[data-variant="sidebar-close"]{
+    width: $sidebarWidth/4;
+    overflow: hidden;
+}
+.block[data-variant="sidebar-close"] .itemlink,
+.block[data-variant="sidebar-close"] .subitemlink{
+    justify-content: center;
+}
+.itemlink,
+.subitemlink{
+    display: flex;
+    color:$c-gray;
+    padding: rem(10) rem(8);
+    font-size: $fs-14;
+}
+.subitemlink{
+    font-size: $fs-14;
+    padding: rem(10) rem(50);
+}
+.itemlink:hover,
+.itemlink[data-variant="active"],
+.subitemlink:hover,
+.subitemlink[data-variant="active"]{
+    background-color: $c-dark-hover;
+    color: $c-white;
+}
+.ico {
+    width: rem(30);
+    height: rem(30);
+}
+.ico[data-variant="logout"] {
+    position: relative;
+    left: 3px;
+}
+.ico[data-variant="fill"] {
+    fill:$c-gray;
+}
+.ico[data-variant="stroke"] {
+    stroke:$c-gray;
+}
+.subico {
+    width: rem(8);
+    height: rem(8);
+    margin-left: rem(15);
+    margin-right: rem(7);
+}
+
+
+.login{
+    display:flex;
+    color:$c-white;
+    font-weight: 600;
+    font-size: $fs-21;
+    text-transform: uppercase;
+    align-items: center;
+}
+.login:hover{
+    text-decoration: none;
+}
+.loginblock{
+    padding: 0 rem(9);
+    margin-bottom: $spaceM/2;
+}
+.logintext{
+    position: relative;
+    top: -(rem(1.5));
+    left: rem(3);
+}
+.logintext:hover{
+    color:$c-mainRed;
+}
+
+.block[data-variant="sidebar-close"] .login{
+    justify-content: center;
+}
+
+.block[data-variant="sidebar-close"] .loginblock{
+    padding: 0 rem(6) 0 0;
+}
+
+@media print {
+    .block{
+        display: none;
+    }
+}

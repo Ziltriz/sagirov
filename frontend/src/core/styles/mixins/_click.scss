@@ -1,0 +1,14 @@
+@mixin clickZone($sizeZone: 10px) {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		top: ($sizeZone * -1);
+		right: ($sizeZone * -1);
+		bottom: ($sizeZone * -1);
+		left: ($sizeZone * -1);
+		cursor: pointer;
+
+		content: '';
+	}
+}

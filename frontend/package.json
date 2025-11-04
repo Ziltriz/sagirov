@@ -1,0 +1,6 @@
+{
+	"dependencies": {
+		"ccxt": "^4.4.95",
+		"chart.js": "^4.5.0"
+	}
+}

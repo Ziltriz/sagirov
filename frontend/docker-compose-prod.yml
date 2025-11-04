@@ -1,0 +1,56 @@
+networks:
+  all:
+    external: true
+    name: '${PROJECT_NAME}'
+  project:
+    external: true
+    name: '${PROJECT_NAME}-${ENV_NAME}'
+  project-service:
+    external: true
+    name: '${PROJECT_NAME}-si-service-${ENV_NAME}'
+
+services:
+    web_nginx:
+        container_name: "${PROJECT_NAME}-web-nginx-${ENV_NAME}"
+        image: ${APP_NGINX}
+        restart: on-failure
+        platform: linux/amd64
+        depends_on:
+            - web_app
+        environment:
+            REMOTE_HOST: '${PROJECT_NAME}-web-app-${ENV_NAME}'
+            REMOTE_PORT: '${PORT}'
+            ROOT_DIR: '/app'
+            VIRTUAL_HOST: '${DOMAIN}'
+            LETSENCRYPT_HOST: '${DOMAIN}'
+        volumes:
+            - ./default.conf.tpl:/etc/nginx/conf.d/default.conf.tpl
+            - './src:/app'
+        networks:
+            - all
+            - project
+            - project-service
+    web_app:
+        container_name: "${PROJECT_NAME}-web-app-${ENV_NAME}"
+        image: ${APP_NODE}
+        restart: on-failure
+        platform: linux/amd64
+        env_file:
+            - .env
+        environment:
+            NEXT_PUBLIC_HOST_URL: '${NEXT_PUBLIC_HOST_URL}'
+            NEXT_PUBLIC_IMAGE_URL: '${NEXT_PUBLIC_IMAGE_URL}'
+            NEXT_PUBLIC_API_URL: '${NEXT_PUBLIC_API_URL}'
+            PORT: '${PORT}'
+            NEXT_PUBLIC_ROOT_PATH: '${NEXT_PUBLIC_ROOT_PATH}'
+        command: >
+            pnpm start
+        working_dir: '/app'
+        ports:
+            - ${PORT}:${PORT}
+        volumes:
+            - './src:/app'
+        networks:
+           - all
+           - project
+           - project-service

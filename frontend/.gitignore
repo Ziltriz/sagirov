@@ -1,0 +1,54 @@
+# dependencies
+**/node_modules
+**/.pnpm-store/
+/.pnp
+.pnp.js
+
+**/cache
+# testing
+/coverage
+
+# next.js
+**/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+._.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+docker/**/.env
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel
+
+#Docker
+docker/dev/.docker-sync
+*.log
+*.pid
+
+# windows thumbnail cache
+Thumbs.db
+
+# Static file storage folder
+storage/*
+!.gitkeep
+
+# Script
+release.sh
+.idea
+tmp

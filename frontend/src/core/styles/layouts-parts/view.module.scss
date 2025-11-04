@@ -1,0 +1,11 @@
+@use '@/core/styles/funcs' as *;
+@use '@/styles/vars' as *;
+
+.block{
+    margin-top: $headerHeight;
+    width:100%;
+    position: relative;
+    padding:  0 $spaceM 0 $spaceM;
+
+
+}

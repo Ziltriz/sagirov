@@ -1,0 +1,25 @@
+@import '@/core/styles/vars';
+
+$fontFamily: 'Verdana';
+$c-dark: #00874f;
+$c-mainRed: #3a8ee8;
+$headerHeight: 0;
+$sidebarWidth: 17vw;
+
+$table-border-color: #797979;
+$table-border-width: 1px;
+$table-stripe-color: #7e7f80;
+$table-hover-color: #f1f1f1;
+$table-cell-padding: 1rem;
+$table-header-bg: #797979;
+$table-radius: 8px;
+
+
+// Таблица
+$table-border-color: #e5e7eb;
+$table-border-width: 1px;
+$table-cell-padding: 0.75rem;
+$table-header-bg: #f3f4f6;
+$table-stripe-color: #f9fafb;
+$table-hover-color: #eff6ff;
+$table-radius: 12px;

@@ -1,0 +1,275 @@
+// globals.scss
+@use '@/core/styles/funcs' as *;
+@use '@/styles/vars' as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: white;
+  overflow-x: hidden;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px $c-grayBg inset !important;
+}
+
+:-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: $c-white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $c-mainRed;
+}
+
+:root {
+    --bg-color: #02030a;
+    --overlay: rgba(0,0,0,0.55);
+    --accent: #ff7a3d;
+    --glass-bg: rgba(255,255,255,0.03);
+    --glass-border: rgba(255,255,255,0.06);
+    --muted: rgba(255,255,255,0.65);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Остальные ваши стили остаются...
+
+.mantine-MultiSelect-input[data-variant="pages-users-providers"],
+.mantine-MultiSelect-input[data-variant="pages-users-rules"],
+.mantine-MultiSelect-input[data-variant="pages-users-scorring"]{
+    max-height: 55px;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 5px 7px;
+}
+
+.mantine-TextInput-root[data-variant^="pages-users"],
+.mantine-NumberInput-root[data-variant^="pages-users"],
+.mantine-PasswordInput-root[data-variant^="pages-users"],
+.mantine-Textarea-root[data-variant^="pages-users"],
+.mantine-SwitchGroup-root[data-variant^="pages-users"],
+.mantine-Group-root[data-variant^="pages-users"],
+.mantine-DropzoneGroup-root[data-variant^="pages-users"],
+.mantine-period-root[data-variant^="pages-users"],
+.mantine-DateInput-root[data-variant^="pages-users"]:not([data-variant$="period"]),
+.mantine-DateTimePicker-root[data-variant^="pages-users"]:not([data-variant$="period"]),
+.mantine-switch-root[data-variant^="pages-users"],
+.mantine-Select-root[data-variant^="pages-users"],
+.mantine-MultiSelect-root[data-variant^="pages-users"],
+.mantine-Autocomplete-root[data-variant^="pages-users"],
+.mantine-TextInput-root[data-variant^="pages-company"],
+.mantine-PasswordInput-root[data-variant^="pages-company"],
+.mantine-Textarea-root[data-variant^="pages-company"],
+.mantine-SwitchGroup-root[data-variant^="pages-company"],
+.mantine-Group-root[data-variant^="pages-company"],
+.mantine-DropzoneGroup-root[data-variant^="pages-company"],
+.mantine-period-root[data-variant^="pages-company"],
+.mantine-DateInput-root[data-variant^="pages-company"]:not([data-variant$="period"]),
+.mantine-DateTimePicker-root[data-variant^="pages-company"]:not([data-variant$="period"]),
+.mantine-switch-root[data-variant^="pages-company"],
+.mantine-Select-root[data-variant^="pages-company"],
+.mantine-MultiSelect-root[data-variant^="pages-company"],
+.mantine-Autocomplete-root[data-variant^="pages-company"] {
+    flex: 1 1 20%;
+}
+
+.mantine-TextInput-root[data-variant^="pages-inline-users"],
+.mantine-NumberInput-root[data-variant^="pages-inline-users"],
+.mantine-PasswordInput-root[data-variant^="pages-inline-users"],
+.mantine-Textarea-root[data-variant^="pages-inline-users"],
+.mantine-SwitchGroup-root[data-variant^="pages-inline-users"],
+.mantine-Group-root[data-variant^="pages-inline-users"],
+.mantine-DropzoneGroup-root[data-variant^="pages-inline-users"],
+.mantine-period-root[data-variant^="pages-inline-users"],
+.mantine-DateInput-root[data-variant^="pages-inline-users"]:not([data-variant$="period"]),
+.mantine-DateTimePicker-root[data-variant^="pages-inline-users"]:not([data-variant$="period"]),
+.mantine-switch-root[data-variant^="pages-inline-users"],
+.mantine-Select-root[data-variant^="pages-inline-users"],
+.mantine-MultiSelect-root[data-variant^="pages-inline-users"],
+.mantine-Autocomplete-root[data-variant^="pages-inline-users"],
+.mantine-TextInput-root[data-variant^="pages-inline-company"],
+.mantine-PasswordInput-root[data-variant^="pages-inline-company"],
+.mantine-Textarea-root[data-variant^="pages-inline-company"],
+.mantine-SwitchGroup-root[data-variant^="pages-inline-company"],
+.mantine-Group-root[data-variant^="pages-inline-company"],
+.mantine-DropzoneGroup-root[data-variant^="pages-inline-company"],
+.mantine-period-root[data-variant^="pages-inline-company"],
+.mantine-DateInput-root[data-variant^="pages-inline-company"]:not([data-variant$="period"]),
+.mantine-DateTimePicker-root[data-variant^="pages-inline-company"]:not([data-variant$="period"]),
+.mantine-switch-root[data-variant^="pages-inline-company"],
+.mantine-Select-root[data-variant^="pages-inline-company"],
+.mantine-MultiSelect-root[data-variant^="pages-inline-company"],
+.mantine-Autocomplete-root[data-variant^="pages-inline-company"] {
+    flex: 1 1 100%;
+}
+
+.mantine-Popover-dropdown[id$="rules-dropdown"],
+.mantine-Popover-dropdown[id$="providers-dropdown"] {
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.mantine-Group-root[data-variant^="filter-"] {
+    flex-wrap: nowrap;
+}
+
+.mantine-TextInput-root[data-variant^="filter-"],
+.mantine-PasswordInput-root[data-variant^="filter-"],
+.mantine-Textarea-root[data-variant^="filter-"],
+.mantine-SwitchGroup-root[data-variant^="filter-"],
+.mantine-Group-root[data-variant^="filter-"],
+.mantine-DropzoneGroup-root[data-variant^="filter-"],
+.mantine-period-root[data-variant^="filter-"],
+.mantine-DateTimePicker-root:not([data-variant$=period])[data-variant^="filter-"],
+.mantine-DateInput-root:not([data-variant$=period])[data-variant^="filter-"],
+.mantine-switch-root[data-variant^="filter-"],
+.mantine-Select-root[data-variant^="filter-"],
+.mantine-MultiSelect-root[data-variant^="filter-"] {
+    margin-bottom: 0;
+}
+
+
+.mantine-TextInput-root[data-variant="pages-avto-avto"],
+.mantine-TextInput-root[data-variant="pages-inline-avto-avto"],
+.mantine-TextInput-root[data-variant="pages-phone-phone"],
+.mantine-TextInput-root[data-variant="pages-inline-phone-phone"],
+.mantine-TextInput-root[data-variant="pages-email-email"],
+.mantine-TextInput-root[data-variant="pages-inline-email-email"],
+.mantine-TextInput-root[data-variant="pages-passport-passport"],
+.mantine-TextInput-root[data-variant="pages-inline-passport-passport"],
+.mantine-TextInput-root[data-variant="pages-inn-inn"],
+.mantine-TextInput-root[data-variant="pages-inline-inn-inn"],
+.mantine-TextInput-root[data-variant="pages-driver_license-driver_license"],
+.mantine-TextInput-root[data-variant="pages-inline-driver_license-driver_license"] {
+    flex: 1 1 100%;
+}
+
+.mantine-TextInput-wrapper[data-variant="pages-avto-avto"],
+.mantine-TextInput-wrapper[data-variant="pages-phone-phone"],
+.mantine-TextInput-wrapper[data-variant="pages-email-email"],
+.mantine-TextInput-wrapper[data-variant="pages-passport-passport"],
+.mantine-TextInput-wrapper[data-variant="pages-inn-inn"],
+.mantine-TextInput-wrapper[data-variant="pages-driver_license-driver_license"]{
+    width: 20%;
+}
+
+
+
+.mantine-Autocomplete-wrapper[data-variant="pages-adres-adres"],
+.mantine-Autocomplete-wrapper[data-variant="pages-inline,adres-adres"] {
+    width: 47.5%;
+}
+
+.mantine-Switch-track[data-label-position="left"]{
+    order:1;
+}
+
+.profile-container {
+    width:100%;
+    margin: 0 auto;
+    padding: 20px 0px;
+  
+    @media (max-width: 768px) {
+      width: 95%;
+      padding: 10px;
+    }
+  }
+  
+  .tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .tab-content {
+    background: $c-white;
+    border-radius: 8px;
+    justify-content: center;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+
+.contentProfile{
+    width: 100%;
+    padding: 0 20px 0 20px;
+}
+
+
+  
+  .stat-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.95);
+
+    max-width: 11rem;
+    max-height: 11.25rem;
+  }
+  
+  .stat-inner {
+    text-align: center;
+  }
+  
+  .stat-small {
+    font-size: 1.1rem;
+    color: var(--muted);
+    text-transform: lowercase;
+  }
+  
+  .stat-big {
+    font-size: 3.7rem;
+    font-weight: 700;
+    margin: 6px 0;
+    color: #e9e9e9;
+  }
+  
+  .stat-caption {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  
+  /* responsive tweaks */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 40px;
+    }
+    .right-cards {
+      justify-content: center;
+      margin-top: 4rem;
+    }
+    .stat-big {
+      font-size: 36px;
+    }
+  }

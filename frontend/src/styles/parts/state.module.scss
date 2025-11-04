@@ -1,0 +1,12 @@
+@use '@/core/styles/funcs' as *;
+@use '@/styles/vars' as *;
+
+.block[data-variant="0"]{
+    color:$c-statusRed;
+}
+.block[data-variant="1"]{
+    color:$c-activeRed;
+}
+.block[data-variant="2"]{
+    color:$c-green;
+}

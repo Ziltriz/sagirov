@@ -1,0 +1,39 @@
+networks:
+  all:
+    external: true
+    name: '${PROJECT_NAME}'
+  project:
+    external: true
+    name: '${PROJECT_NAME}-${ENV_NAME}'
+  project-service:
+    external: true
+    name: '${PROJECT_NAME}-si-service-${ENV_NAME}'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8001"
+    env_file:
+      - .env
+    environment:
+      - PROJECT_NAME=${PROJECT_NAME}
+      - PYTHONPATH=/app/app
+      - TZ=Europe/Moscow
+    volumes:
+      - .:/app
+      - ./logs/backend:/app/logs/backend
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    networks:
+      - all
+      - project
+      - project-service
+
+    restart: always
+
+  
+volumes:
+    backend:

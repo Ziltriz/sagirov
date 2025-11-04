@@ -1,0 +1,15 @@
+@use 'sass:math';
+@use '@/core/styles/funcs/utils' as *;
+
+@function fluid($minSize, $maxSize, $units: 'vw', $minWidth: 375, $maxWidth: 1440) {
+	$minSize: math.div($minSize, 16);
+	$maxSize: math.div($maxSize, 16);
+	$maxWidth: math.div($maxWidth, 16);
+	$minWidth: math.div($minWidth, 16);
+	$slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+	$yAxisIntersection: -$minWidth * $slope + $minSize;
+	$preferredValue: '#{decimal-round($yAxisIntersection,3)}rem + #{decimal-round(($slope*100),3) }#{$units}';
+	$minSize: decimal-round($minSize, 3) * 1rem;
+	$maxSize: decimal-round($maxSize, 3) * 1rem;
+	@return clamp(#{$minSize}, #{$preferredValue}, #{$maxSize});
+}

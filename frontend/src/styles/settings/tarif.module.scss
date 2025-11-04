@@ -1,0 +1,221 @@
+@use '@/core/styles/funcs' as *;
+@use '@/styles/vars' as *;
+
+
+.container {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: $table-radius;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  .table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+    border: $table-border-width solid $table-border-color;
+    border-radius: $table-radius;
+    overflow: hidden;
+    font-size: 0.9rem;
+
+    .thead {
+      .tr {
+        background-color: $table-header-bg;
+        
+        .th {
+          padding: $table-cell-padding;
+          text-align: left;
+          font-weight: 600;
+          border-bottom: $table-border-width solid $table-border-color;
+          
+          &:not(:last-child) {
+            border-right: $table-border-width solid $table-border-color;
+          }
+        }
+      }
+    }
+
+    .tbody {
+      .tr {
+        transition: background-color 0.2s ease;
+        
+        &:nth-child(even) {
+          background-color: $table-stripe-color;
+        }
+        
+        &:hover {
+          background-color: $table-hover-color;
+        }
+        
+        .td {
+          padding: $table-cell-padding;
+          border-bottom: $table-border-width solid $table-border-color;
+          
+          &:not(:last-child) {
+            border-right: $table-border-width solid $table-border-color;
+          }
+        }
+        
+        &:last-child {
+          .td {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    .tr {
+      .th:first-child,
+      .td:first-child {
+        border-left: $table-border-width solid $table-border-color;
+      }
+      
+      .th:last-child,
+      .td:last-child {
+        border-right: $table-border-width solid $table-border-color;
+      }
+    }
+  }
+}
+
+
+.containerBalance {
+  max-width: 100%;
+  border-radius: $table-radius;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  justify-content: space-evenly;
+}
+
+.tableBalance {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: rem(5);
+  border: 1px solid $table-border-color;
+  border-radius: $table-radius;
+  font-size: 0.9rem;
+  background-color: $table-header-bg;
+  
+}
+
+.tableHeader{
+  width: 100%;
+  justify-content: center;
+}
+
+.textcontent{
+  font-weight: bold;
+  font-size: $fs-16;
+}
+
+.listcontent{
+  font-size: $fs-14;
+  max-width: 80px;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.actionlist{
+  min-width: 120px;
+}
+
+.textheader{
+  font-weight: bold;
+  font-size: $fs-14;
+  padding: 10px;
+}
+
+.theadBalance {
+  .tr {
+    background-color: $table-header-bg;
+    
+    .th {
+      padding: $table-cell-padding;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 1px solid $table-border-color;
+      
+      &:not(:last-child) {
+        border-right: 1px solid $table-border-color;
+      }
+    }
+  }
+}
+
+.tbodyBalance {
+  .tr {
+    transition: background-color 0.2s ease;
+    background-color: $c-white;
+    
+    
+    &:nth-child(even) {
+      background-color: $table-stripe-color;
+    }
+    
+    &:hover {
+      background-color: $table-hover-color;
+    }
+
+    .td {
+      padding: $table-cell-padding;
+      border-bottom: 1px solid $table-border-color;
+      
+      &:not(:last-child) {
+        border-right: 1px solid $table-border-color;
+      }
+    }
+
+    &:last-child {
+      .td {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.paginationBalance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0 0.75rem;
+}
+
+.pageInfoBalance {
+  font-size: 0.85rem;
+  color: $c-gray;
+}
+
+.navButtonBalance {
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  background-color: $c-dark;
+  color: $c-white;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $c-hoverRed;
+    border-radius: 9999px;
+  }
+
+  &:disabled {
+    background-color: $c-white;
+    color: $c-gray;
+    cursor: not-allowed;
+  }
+}
+
+.title{
+  font-size: $fs-28;
+  margin-bottom: $spaceS;
+  color: black;
+  font-weight: bold;
+  justify-items: center;
+}
+
+.header{
+  margin-top: $headerHeight;
+  width:100-$sidebarWidth;
+  display: flex;
+  justify-content: center;
+}

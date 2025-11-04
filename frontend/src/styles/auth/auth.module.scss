@@ -1,0 +1,38 @@
+@use '@/core/styles/funcs' as *;
+@use '@/styles/vars' as *;
+
+.block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    overflow: hidden;
+}
+.title{
+    font-size: $fs-28;
+    margin-bottom: $spaceS;
+    color:$c-dark;
+    font-weight: 400;
+}
+.form{
+    width: rem(528);
+    height: rem(386);
+    background-color: $c-white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-radius: $dialog-border-radius;
+    padding: rem(30) rem(28);
+}
+.forgot{
+    margin-bottom: $spaceXS;
+    width: 100%;
+    text-align: right;
+}
+.forgot_link{
+    color:$c-gray;
+    text-decoration: none;
+    font-size: $fs-16;
+}

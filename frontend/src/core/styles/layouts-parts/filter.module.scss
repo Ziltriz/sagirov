@@ -1,0 +1,63 @@
+@use '@/core/styles/funcs' as *;
+@use '@/styles/vars' as *;
+
+.block{
+    position:relative;
+    background-color: $c-white;
+    padding: rem(20) rem(32);
+    justify-content: left;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    width:100%;
+    margin-top: -($spaceM*2);
+    margin-bottom: $spaceM/2;
+}
+.item{
+    margin-left: rem(20);
+    margin-right: rem(20);
+    cursor:pointer;
+}
+.item:first-child{
+    margin-left: 0;
+}
+.item:last-child{
+    margin-right: 0;
+}
+.itemvalue{
+    position: relative;
+
+}
+.itemlabel{
+    font-size: $fs-16;
+}
+.itemicon{
+    position: relative;
+    top: 6px;
+    left: 5px;
+    width: 18px;
+    height: 18px;
+}
+.itemdropdown{
+    border:$mainBorder;
+    background-color: $c-white;
+    padding: rem(24) rem(15);
+    position: absolute;
+    top: rem(10);
+    z-index: 2;
+    width: rem(350);
+}
+.itemlabel:hover,
+.itemlabel[data-variant="open"]{
+    color: $c-mainRed;
+}
+.itemlabel:hover + .itemicon,
+.itemlabel[data-variant="open"] + .itemicon{
+    fill: $c-mainRed;
+}
+
+.clear{
+    margin-left: rem(25);
+    // position: absolute;
+    // bottom: rem(20);
+    // right: rem(40);
+}

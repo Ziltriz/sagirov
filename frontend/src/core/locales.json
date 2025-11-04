@@ -1,0 +1,92 @@
+{
+  "ru": {
+    "week_list": {
+      "placeholder": "Дни недели",
+      "everyday": "Ежедневно",
+      "monday": "Понедельник",
+      "tuesday": "Вторник",
+      "wednesday": "Среда",
+      "thursday": "Четверг",
+      "friday": "Пятница",
+      "saturday": "Суббота",
+      "sunday": "Воскресение",
+      "short": {
+        "everyday": "Ежд",
+        "monday": "Пн",
+        "tuesday": "Вт",
+        "wednesday": "Ср",
+        "thursday": "Чт",
+        "friday": "Пт",
+        "saturday": "Сб",
+        "sunday": "Вс"
+      }
+    },
+    "access": {
+      "sections": {
+        "users": "Доступ к разделам"
+      }
+    },
+    "headlings": {
+      "auth": "Авторизация",
+      "profile": "Профиль"
+    },
+    "common": {
+      "send_button": "Найти",
+      "send_inline_button": "Найти",
+      "logout": "Выйти",
+      "ordered": "Порядок вывода",
+      "clear_button": "Очистить",
+      "view_button": "Открыть",
+      "edit_button": "Изменить",
+      "edit_inline_button": "Изменить",
+      "add_button": "Новый поиск",
+      "add_inline_button": "Новый поиск",
+      "delete_button": "Удалить",
+      "delete_confirm_button": "Удалить",
+      "reset_button": "Отмена",
+      "reset_inline_button": "Отмена",
+      "reset_confirm_button": "Отмена",
+      "save_button": "Сохранить",
+      "save_inline_button": "Сохранить",
+      "print": "Распечатать",
+      "share": "Поделиться",
+      "save_edit": "Сохранить",
+      "select_files": "Выберите файлы",
+      "image_requirements": "Требования к изображению",
+      "created_at": "Дата создания",
+      "updated_at": "Дата изменения",
+      "session_at": "Сессия до"
+    },
+    "fields": {
+      "active": "Активность"
+    },
+    "descriptions": {},
+    "errors": {
+      "email": "Некорректный email",
+      "phone": "Некорректный телефон"
+    },
+    "list": {
+      "prev": "Предыдущая",
+      "next": "Следующая"
+    },
+    "items_block": {
+      "title_block": "Блок",
+      "delete_block": "Удалить",
+      "prev_block": "Перенести вверх",
+      "next_block": "Перенести вниз",
+      "add_block": "Добавить"
+    },
+    "type_block": {
+      "title_block": "Блок",
+      "delete_block": "Удалить",
+      "prev_block": "Перенести вверх",
+      "next_block": "Перенести вниз",
+      "add_block": "Добавить",
+      "new_block": "Новый блок",
+      "buttons_block": {
+        "add": "Добавить блок",
+        "reset": "Отменить"
+      }
+    }
+  }
+}

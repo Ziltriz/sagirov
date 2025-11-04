@@ -1,0 +1,61 @@
+@use '@/core/styles/funcs' as *;
+@use '@/core/styles/vars' as *;
+
+.week_list_timeout{
+    flex: 1 1 100%;
+    padding: $spaceXS/4 $spaceXS/2;
+    display:flex;
+}
+.week_list_checkbox_timeout{
+    flex: 1 1 25%;
+    align-items: center;
+    display: flex;
+    position: relative;
+    top: -(rem(9));
+}
+.week_list_input_timeout{
+    cursor:pointer;
+}
+.week_time_wrapper{
+    flex: 1 1 50%;
+    padding: $spaceXS/4 $spaceXS/2;
+}
+.week_time_input{
+    cursor:pointer;
+}
+.week_time_items{
+    display:flex;
+}
+.week_time_item{
+    flex: 1 1 50%;
+    padding: 0 $spaceXS/2;
+}
+.week_list_wrapper{
+    flex: 1 1 50%;
+    padding: $spaceXS/4 $spaceXS/2;
+}
+.week_list_input{
+    cursor:pointer;
+}
+.week_list_input:focus{
+    outline:none !important;
+    border:none !important;
+}
+.week_list_dropdown{
+    position: static;
+}
+.week_list_dropdown_item{
+    position: static;
+}
+.week_list_checkbox{
+    margin: $spaceXS/2 0;
+}
+.week_wrapper{
+    display: flex;
+    flex-wrap:wrap;
+}
+.week_time_item_inputicon,
+.week_common_inputicon{
+    fill:$c-mainBlue;
+    margin-right: $spaceXS/4;
+}

@@ -1,0 +1,300 @@
+@use '@/core/styles/funcs' as *;
+@use '@/styles/vars' as *;
+
+
+.block{
+    margin-top: $headerHeight;
+    margin-left: $sidebarWidth;
+    width:100-$sidebarWidth;
+    position: relative;
+}
+.block[data-variant="sidebar-close"]{
+    margin-left: $sidebarWidth/4;
+    width:(100-($sidebarWidth/4));
+}
+.form{
+    flex-wrap: wrap;
+    display: flex;
+    border-radius: $dialog-border-radius;
+    /*padding:  0 $spaceM $spaceM*2 $spaceM;*/
+    padding:  0 0 $spaceM*2 0;
+    margin-top: $spaceM*1.1;
+}
+.form[variant="inline"],
+.form[variant="confirm"]{
+    margin-top: 0;
+    padding:  0 0 $spaceXS 0;
+}
+.blockbutton{
+    flex: 1 1 100%;
+    padding:  0 $spaceM 0 $spaceM;
+}
+.blockbutton[data-variant="inline"],
+.blockbutton[data-variant="confirm"]{
+    padding:  $spaceM 0 0;
+    text-align: center;
+}
+.button{
+    width:4%;
+    background: $c-mainRed;
+    color:$c-black;
+    font-size: $fs-16;
+    padding: rem(5) rem(10);
+    text-transform: uppercase;
+    font-weight:normal;
+}
+.button[data-variant="inline"],
+.button[data-variant="confirm"]{
+    width:rem(200);
+}
+
+.linkreset{
+    display: inline-flex;
+    width:17%;
+    background: $c-mainRed;
+    color:$c-black;
+    font-size: $fs-16;
+    padding: rem(12);
+    line-height: 1.5;
+    min-height: rem(12 * 2 * 1.7);
+    cursor: pointer;
+    border-radius: $radius-primary;
+    justify-content: center;
+    align-items: center;
+    margin-right: $spaceS;
+    position: relative;
+    top: rem(3);
+    text-transform: uppercase;
+    margin-left: rem(20);
+}
+
+.linkreset[data-variant="inline"],
+.linkreset[data-variant="confirm"]{
+    width:rem(200);
+}
+
+.buttonadd{
+    margin-left: rem(20);
+    background-color: $c-mainRed;
+    color:$c-black;
+    font-size: $fs-16;
+    padding: rem(5) rem(20);
+    text-transform: uppercase;
+    position: relative;
+    top: 2px;
+}
+
+.button:hover,
+.linkreset:hover,
+.buttonadd:hover{
+    background: $c-hoverRed;
+    color:$c-white;
+    text-decoration: none;
+}
+
+.buttonaddicon{
+    position: relative;
+    top:rem(1.5);
+}
+.list{
+    width:100%;
+    padding:  0 $spaceM 0 $spaceM;
+}
+.items{
+    width:100%;
+    background-color: $c-white;
+    border-radius: $dialog-border-radius;
+    box-shadow: $b-shadow;
+    margin-bottom: $spaceS;
+    display:table;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+.bodyitem,
+.head{
+    display:table-row;
+}
+.bodyitem{
+    color:$c-dark;
+    background-color: $c-white;
+}
+.bodyitem[data-opacity="true"]{
+    position: relative;
+    z-index: 9999 !important;
+}
+.bodyitemvalue{
+    display:table-cell;
+    vertical-align: middle;
+    padding: rem(20) rem(24);
+}
+.bodyitemvalue[data-variant^="setting-item"]{
+    width:50%;
+}
+.bodyitemvalue[data-variant^="setting-tarif-text"]{
+    width:12.5%;
+    padding: rem(20) rem(5);
+}
+.bodyitemvalue[data-variant="fieldsordered"] {
+    max-width: 50px;;
+    width:50px;
+}
+.bodyitemaction{
+    background: $c-mainRed;
+    border-radius: $radius-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(32);
+    height: rem(32);
+    float:right;
+    position: relative;
+    right: rem(25);
+}
+.bodyitemaction:hover{
+    background: $c-hoverRed;
+    color: $c-white;
+}
+.bodyitemactionicon{
+    fill:$c-gray;
+    cursor:pointer;
+}
+.bodyitemactionlink{
+    font-size: $fs-16;
+    margin-bottom: rem(5);
+    display: block;
+    color:$c-dark;
+    text-decoration: none;
+    padding: $spaceS/4 $spaceS/2 ;
+}
+.bodyitemactionlink:focus{
+    outline:none;
+    border:none;
+}
+.headitem{
+    position: relative;
+    color:$c-black;
+    display:table-cell;
+    padding: rem(20) rem(24);
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: $c-mainRed;
+}
+.headitemsort{
+    position: relative;
+    left: 10%;
+    top: 1px;
+}
+.headitemsorticon{
+    fill:$c-black;
+}
+.headitemsorticon path{
+    fill:$c-black;
+}
+.headitem[data-variant="fieldsordered"] {
+    max-width: rem(100);
+    white-space: pre-wrap;
+}
+.bodyitem[data-variant="fieldsordered"] {
+    max-width: rem(70);
+}
+.pagintaion{
+    justify-content: left;
+    align-items: center;
+}
+.pagintaionitem{
+    width: rem(36);
+    height: rem(36);
+    margin-right: rem(12);
+    cursor:pointer;
+    color:$c-black;
+    border-radius: $radius-primary;
+    justify-content: center;
+    align-items: center;
+    font-size: $fs-16;
+    background-color: $c-mainRed;
+}
+.pagintaionitem[data-variant="active"]{
+    background-color: $c-hoverRed;
+    color:$c-white;
+}
+.pagintaionitemprev{
+    margin-right: rem(12);
+}
+.pagintaionitemprev,
+.pagintaionitemnext{
+    font-size: $fs-16;
+    cursor: pointer;
+}
+.pagintaionitemprevicon,
+.pagintaionitemnexticon{
+    position: relative;
+    top: rem(5);
+    margin-left: rem(5);
+}
+.bodyitemvalueselect{
+    position: relative;
+    background-color: $c-grayBtn;
+    border-radius: $radius-primary;
+    padding:rem(6) rem(12*2) rem(6) rem(12);
+    font-size: $fs-12;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.bodyitemvalueselect[data-variant="open"] {
+    background-color: $c-grayLines;
+}
+.bodyitemiconselect{
+    position: absolute;
+    top:rem(7);
+    right:rem(6);
+    width: rem(16);
+    height: rem(16);
+}
+.bodyitemselectitem{
+    margin-bottom: $spaceXS;
+}
+.bodyitemselecttitle{
+    font-size: $fs-16;
+    margin-bottom: $spaceXS;
+}
+.bodyitemvalueimage{
+    width:auto;
+    height: rem(100);
+    pointer-events: none;
+}
+.boxordered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor:pointer;
+}
+.boxordereditem{
+    fill: $c-dark;
+    margin-bottom:$spaceXS;
+}
+.boxordereditem:last-child{
+    margin-bottom: 0;
+}
+.beforecontent{
+    background-color: $c-white;
+    border-radius: $dialog-border-radius;
+    padding: $spaceS/1.5;
+    margin: rem(28) ;
+    box-shadow: $b-shadow;
+    position: relative;
+    display:flex;
+    flex-wrap: wrap;
+}
+.headitem[data-variant="fieldsupload_id"]{
+    text-align: center;
+}
+
+@media print {
+    .block{
+        margin-top: 0;
+        margin-left: 0;
+        width:100%;
+    }
+}

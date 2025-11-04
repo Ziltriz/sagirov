@@ -1,0 +1,254 @@
+@use '@/core/styles/funcs' as *;
+@use '@/core/styles/vars' as *;
+
+.fieldswrapper{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.fieldswrapper[data-variant="pages"] {
+    padding:  0 $spaceM 0 $spaceM;
+}
+.itemsblockwrapper {
+    width: 100%;
+}
+
+.itemsblockitemtitle {
+    font-size: $fs-23;
+    font-weight: 600;
+    position: relative;
+    top: $spaceS;
+    left: $spaceM;
+}
+
+.itemsblockbutton {
+    display: flex;
+    height: rem(48);
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $c-grayLines;
+    color: $c-dark;
+    cursor: pointer;
+    margin-bottom: $spaceS;
+    border-radius: $radius-primary;
+    font-size: $fs-16;
+}
+
+.itemsblockbuttonicon {
+    fill: $c-dark;
+    position: relative;
+    right: $spaceXS;
+}
+
+.itemsblockitems {
+    flex-wrap: wrap;
+}
+
+.itemsblockitem {
+    position: relative;
+    width: 100%;
+    background-color: $c-white;
+    border-radius: $radius-primary;
+    margin-bottom: $spaceS;
+}
+
+.itemsblockitempanel {
+    position: absolute;
+    top: $spaceS;
+    right: $spaceS;
+    width: $spaceM;
+    height: $spaceM;
+    background-color: $c-grayLines;
+    border-radius: $radius-primary;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.itemsblockitempanelicon {
+    fill: $c-dark;
+}
+
+.itemsblockitemdropdown {
+    flex-wrap: wrap;
+}
+
+.itemsblockitemdropdownitem {
+    width: 100%;
+    padding: $spaceS/2 $spaceS $spaceS/2 0;
+    cursor: pointer;
+}
+
+.itemsblockitemdropdownitem:hover {
+    text-decoration: underline;
+}
+
+.itemsblockitemfields {
+    width: 100%;
+    padding: $spaceS/2 0 0 0;
+    flex-wrap: wrap;
+}
+
+.itemsblockitemstype {
+    display: flex;
+    background-color: $c-white;
+    padding: $spaceM;
+    margin-bottom: $spaceM;
+    flex: 1 1 50%;
+    border-radius: $radius-primary;
+    flex-wrap: wrap;
+}
+
+.itemsblockitemstypetitle {
+    width: 100%;
+    font-weight: 500;
+}
+
+.itemsblockitemstypeitem {
+    width: calc(100%/4 - $spaceS/4);
+    margin-right: $spaceS/4;
+    margin-top: $spaceM;
+    margin-bottom: $spaceM;
+    cursor: pointer;
+}
+
+.itemsblockitemstypeitem:nth-child(2n+5) {
+    margin-right: 0;
+}
+
+.itemsblockitemstypeitemicon {
+    overflow: hidden;
+    position: relative;
+}
+
+.itemsblockitemstypeitemicon::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 96%;
+    border: 3px solid rgba(0, 0, 0, 0);
+    overflow: hidden;
+    border-radius: $radius-primary;
+}
+
+.itemsblockitemstypeitemicon[data-variant="active"]::before {
+    border: 3px solid $c-dark;
+}
+
+.itemsblockitemstypeitemicon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.itemsblockitemstypeitemtitle {
+    color: $c-gray;
+    font-size: $fs-16;
+    font-weight: 500;
+    position: relative;
+    left: rem(3);
+    margin-top: $spaceXS/2;
+}
+
+.itemsblockitemstypeitemtitle[data-variant="active"] {
+    color: $c-dark;
+}
+
+.itemsblockitemstypebuttons {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+}
+
+.itemsblockitemstypebutton {
+    width: rem(167);
+    border: rem(2) solid $c-grayBtn;
+    background-color: $c-grayBtn;
+    color: $c-gray;
+    font-size: $fs-16;
+    padding: rem(12);
+    line-height: 1.5;
+    min-height: rem(12 * 4);
+    cursor: pointer;
+    border-radius: $radius-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemsblockitemstypebutton[data-variant^="reset"] {
+    background-color: $c-white;
+    color: $c-dark;
+    margin-right: $spaceXS;
+    position: relative;
+    top:rem(3);
+}
+
+.itemsblockitemstypebutton:hover[data-variant^="add"] {
+    background-color: $c-dark;
+    border: rem(2) solid $c-dark;
+}
+.itemsblockitemstypebutton[data-variant="add__active"] {
+    background-color: $c-dark;
+    border: rem(2) solid $c-dark;
+    color:$c-white;
+}
+
+.itemstabs{
+}
+.itemstabswrapper{
+    background: $c-white;
+    width:105%;
+    margin: (-$spaceM) (-$spaceM) $spaceM (-$spaceM);
+    padding: 0 $spaceM 0 $spaceM;
+    border-bottom: 2px solid $c-grayLines;
+}
+.itemstabsitem{
+    color:$c-gray;
+    padding: $spaceXS $spaceXS $spaceXS $spaceXS;
+    cursor:pointer;
+    position:relative;
+}
+.itemstabsitem:first-child{
+    margin-left:-$spaceXS;
+}
+.itemstabsitem[data-variant="active"]{
+    color: $c-dark;
+}
+.itemstabsitem[data-variant="active"]:before{
+    width:100%;
+    height:2px;
+    content:'';
+    display:flex;
+    position:absolute;
+    bottom:-(rem(1));
+    left:0;
+    background-color: $c-dark;
+}
+
+.itemsbeforetext{
+    width: 100%;
+    background: $c-white;
+    border-top-left-radius: $radius-primary;
+    border-top-right-radius: $radius-primary;
+    padding: $spaceM/2 $spaceM 0 $spaceM;
+    font-size: $fs-23;
+    color: $c-dark;
+}
+
+.itemsblockbutton[data-variant="pages-page.contact.value-sections-section"]{
+    position:absolute;
+    top: $spaceM*2;
+    right: $spaceM;
+    border:none;
+    font-size:$fs-16;
+    color:$c-mainBlue;
+}
+
+.itemsblockbuttonicon[data-variant="pages-page.contact.value-sections-section"]{
+    fill:$c-mainBlue;
+    right: $spaceXS/2;
+}

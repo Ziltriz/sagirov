@@ -1,0 +1,90 @@
+@use '@/core/styles/vars' as *;
+
+@mixin v-hidden {
+	clip: rect(0 0 0 0);
+	position: absolute;
+	clip-path: inset(50%);
+	margin: 0 -1px -1px 0;
+	border: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+@mixin container {
+	margin-inline: auto;
+	padding-inline: $space-80;
+	max-width: $xl;
+	overflow-x: hidden;
+}
+
+@mixin text-shorten($numLines: 1) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	@supports (-webkit-line-clamp: $numLines) {
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $numLines;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}
+
+@mixin flex-c {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-sb {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+@mixin flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin centering {
+	display: grid;
+	place-content: center;
+}
+
+@mixin focusRing {
+	outline: $c-grayLines auto 2px;
+	outline-offset: 4px;
+}
+
+@mixin scrollbar {
+	// Standard version (Firefox only for now)
+	scrollbar-color: $c-dark transparent;
+	// For Chrome & Safari
+	&::-webkit-scrollbar {
+		width: 3px;
+		height: 110px;
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 99px;
+		background: $c-dark;
+		padding: 0px 4px;
+	}
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+}
+
+@mixin borderRadius {
+	&:last-of-type {
+		border-bottom-right-radius: $radius-primary;
+		border-bottom-left-radius: $radius-primary;
+	}
+	&:first-of-type {
+		border-top-right-radius: $radius-primary;
+		border-top-left-radius: $radius-primary;
+	}
+}

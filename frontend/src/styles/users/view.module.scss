@@ -1,0 +1,197 @@
+@use '@/core/styles/funcs' as *;
+@use '@/styles/vars' as *;
+
+.block,.analyticblock, .analyticblockwrapper{
+    background-color: $c-white;
+    padding:  $spaceM;
+    margin-bottom: $spaceM;
+}
+.analyticblock{
+    display: table;
+}
+.blocktitle,
+.analytictitle{
+    font-size: $fs-21;
+    width:50%;
+}
+.blockrow,
+.analyticrow {
+    align-items: baseline;
+}
+
+.blockbuttons, .blockinputs{
+    width: 50%;
+    justify-content: right;
+}
+
+.blockbutton{
+    width: rem(150);
+    background-color: $c-mainRed;
+    color:$c-black;
+    font-size: $fs-16;
+    padding: rem(12);
+    line-height: 1.5;
+    min-height: rem(12 * 4);
+    cursor: pointer;
+    border-radius: $radius-primary;
+    margin-left: $spaceM/2;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.blockbutton:hover{
+    background-color: $c-hoverRed;
+    color:$c-white;
+    text-decoration: none;
+}
+.blockdetailvalue{
+    font-size: $fs-18;
+}
+.blockdetailhead{
+    font-size: $fs-21;
+    font-weight: bold;
+    margin-right: $spaceM/2;
+}
+.blockdetailrow{
+    align-items: baseline;
+}
+.analyticharts{
+    margin-top: $spaceM;
+}
+.analytidetail{
+    align-items: baseline;
+    margin-bottom: $spaceM/4;
+    display: table;
+    width: 100%;
+    border: 1px solid $c-grayBg;
+}
+
+.analytidetailrow{
+    display: table-row;
+}
+
+.analytidetailrowdetail{
+    border: 1px solid $c-grayBg;
+    border-top: none;
+    border-bottom: none;
+    padding: $spaceXS/2;
+}
+
+
+.analytidetailrow:not([data-open]) + .analytidetailrow[data-variant="detail"]{
+    display: none;
+}
+
+.analytidetailrowdetailcol[data-variant-name="state"][data-variant="0"]{
+    color:$c-statusRed;
+}
+.analytidetailrowdetailcol[data-variant-name="state"][data-variant="1"]{
+    color:$c-activeRed;
+}
+.analytidetailrowdetailcol[data-variant-name="state"][data-variant="2"]{
+    color:$c-green;
+}
+
+
+.analytidetailitem,
+.analytisummaryitem{
+    font-size: $fs-14;
+    margin-right: $spaceM/2;
+    padding: $spaceXS/2;
+}
+
+.analytidetailitem{
+    display: table-cell;
+    border: 1px solid $c-grayBg;
+}
+
+.analytidetailitem[data-variant="head"]{
+    font-weight: 600;
+    font-size: $fs-16;
+    padding-bottom: $spaceXS;
+}
+
+/*.analytidetailitem[data-variant="title"],
+.analytisummaryitem[data-variant="title"]{
+
+}*/
+
+.analytidetailitem[data-variant="success"],
+.analytisummaryitem[data-variant="success"]{
+    color:$c-green
+}
+
+.analytidetailitem[data-variant="error"],
+.analytisummaryitem[data-variant="error"]{
+    color:$c-errorRed;
+}
+
+.analytidetailitem[data-variant="price"],
+.analytisummaryitem[data-variant="price"]{
+    color:$c-black;
+    font-size: $fs-16;
+    font-weight: 500;
+}
+.analytisummaryitem[data-variant="price"]{
+    font-size: $fs-21;
+}
+
+.analytidetailitemicon{
+    stroke: $c-black;
+}
+
+.analytidetailrow[data-open] .analytidetailitemicon{
+    transform: rotate(180deg);
+}
+
+.analytidetailitem[data-variant="detail"]{
+    cursor:pointer;
+    text-align: center;
+}
+
+.analytidetailitem[data-variant="head"]{
+    text-align: left;
+}
+
+.analytidetailrowdetaildate{
+    margin-right: rem(10);
+}
+
+.analytidetailrowdetaillink{
+    display: inline-flex;
+    background-color: $c-mainRed;
+    color:$c-black;
+    padding: rem(2) rem(12);
+    cursor: pointer;
+    border-radius: $radius-primary;
+    text-align: center;
+    text-transform: uppercase;
+}
+.analytidetailrowdetaillink:hover{
+    background-color: $c-hoverRed;
+    color: $c-white;
+    text-decoration: none;
+}
+
+.analytidetailrowdetailprice{
+    color: $c-black;
+}
+
+.analytidetailrowdetailbox{
+    width:100%;
+}
+
+.analytidetailrowdetailcol{
+    padding-bottom: $spaceM/2;
+}
+.analytidetailrowdetailcol[data-variant="head"]{
+    font-weight: bold;
+    text-align: left;
+}
+
+.analytidetailrowdetailcol[data-variant-name="state"]{
+    width: 10%;
+}
+.analytidetailrowdetailcol[data-variant-name="data"]{
+    width: 40%;
+}
