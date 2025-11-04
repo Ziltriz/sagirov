@@ -24,7 +24,7 @@ help: ## Show this help
 init: install build network ## init service
 
 install: network ## install service
-	docker compose -f "$(DOCKER_COMPOSE_FILE)" run --rm "$(CONTAINER_NAME)" pnpm install
+	docker compose -f "$(DOCKER_COMPOSE_FILE)" run --rm "$(CONTAINER_NAME)" npm install -g pnpm@latest
 
 build: ## build service
 	docker compose -f "$(DOCKER_COMPOSE_FILE)" run --rm "$(CONTAINER_NAME)" pnpm build
